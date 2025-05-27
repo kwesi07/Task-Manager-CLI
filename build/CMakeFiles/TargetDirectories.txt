@@ -1,0 +1,3 @@
+/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/CMakeFiles/task_manager.dir
+/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/CMakeFiles/edit_cache.dir
+/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/CMakeFiles/rebuild_cache.dir
