@@ -95,6 +95,8 @@ task_manager_EXTERNAL_OBJECTS =
 
 task_manager: CMakeFiles/task_manager.dir/task_manager.cpp.o
 task_manager: CMakeFiles/task_manager.dir/build.make
+task_manager: external/SQLiteCpp/libSQLiteCpp.a
+task_manager: external/SQLiteCpp/sqlite3/libsqlite3.a
 task_manager: CMakeFiles/task_manager.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable task_manager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/task_manager.dir/link.txt --verbose=$(VERBOSE)

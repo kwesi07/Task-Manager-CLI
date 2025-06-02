@@ -11,6 +11,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.0.2/CMakeCCompiler.cmake"
   "CMakeFiles/4.0.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.0.2/CMakeSystem.cmake"
+  "/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/external/SQLiteCpp/CMakeLists.txt"
+  "/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/external/SQLiteCpp/cmake/SQLiteCppConfig.cmake.in"
+  "/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/external/SQLiteCpp/sqlite3/CMakeLists.txt"
+  "/opt/homebrew/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "/opt/homebrew/share/cmake/Modules/CMakeCCompiler.cmake.in"
   "/opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c"
   "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
@@ -30,6 +34,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake"
+  "/opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake"
@@ -40,6 +45,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeTestCompilerCommon.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeUnixFindMake.cmake"
+  "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake"
+  "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake"
+  "/opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
@@ -98,12 +106,19 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
   "/opt/homebrew/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPython.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindPython/Support.cmake"
+  "/opt/homebrew/share/cmake/Modules/FindThreads.cmake"
+  "/opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeInspectCLinker.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake"
+  "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
   "/opt/homebrew/share/cmake/Modules/Internal/FeatureTesting.cmake"
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake"
   "/opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake"
@@ -120,6 +135,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake"
+  "/opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake"
   )
 
 # The corresponding makefile is:
@@ -138,9 +154,15 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/4.0.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.0.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "external/SQLiteCpp/cmake/SQLiteCppConfigVersion.cmake"
+  "external/SQLiteCpp/cmake/SQLiteCppConfig.cmake"
+  "external/SQLiteCpp/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "external/SQLiteCpp/sqlite3/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/task_manager.dir/DependInfo.cmake"
+  "external/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/DependInfo.cmake"
+  "external/SQLiteCpp/sqlite3/CMakeFiles/sqlite3.dir/DependInfo.cmake"
   )

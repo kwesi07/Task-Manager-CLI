@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\" \"headers\" \"libraries\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/CMakeFiles /Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build//CMakeFiles/progress.marks
@@ -129,6 +174,32 @@ task_manager/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager.dir/build.make CMakeFiles/task_manager.dir/build
 .PHONY : task_manager/fast
 
+#=============================================================================
+# Target rules for targets named SQLiteCpp
+
+# Build rule for target.
+SQLiteCpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SQLiteCpp
+.PHONY : SQLiteCpp
+
+# fast build rule for target.
+SQLiteCpp/fast:
+	$(MAKE) $(MAKESILENT) -f external/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/build.make external/SQLiteCpp/CMakeFiles/SQLiteCpp.dir/build
+.PHONY : SQLiteCpp/fast
+
+#=============================================================================
+# Target rules for targets named sqlite3
+
+# Build rule for target.
+sqlite3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sqlite3
+.PHONY : sqlite3
+
+# fast build rule for target.
+sqlite3/fast:
+	$(MAKE) $(MAKESILENT) -f external/SQLiteCpp/sqlite3/CMakeFiles/sqlite3.dir/build.make external/SQLiteCpp/sqlite3/CMakeFiles/sqlite3.dir/build
+.PHONY : sqlite3/fast
+
 task_manager.o: task_manager.cpp.o
 .PHONY : task_manager.o
 
@@ -160,7 +231,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... SQLiteCpp"
+	@echo "... sqlite3"
 	@echo "... task_manager"
 	@echo "... task_manager.o"
 	@echo "... task_manager.i"

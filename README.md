@@ -2,311 +2,208 @@ Task Manager CLI
 
 Description
 
-A C++ command-line application for managing tasks, allowing users to add, view, update, delete, and mark tasks as complete. Tasks are stored in a JSON file (tasks.json) using the nlohmann/json library, ensuring persistent data storage. This project demonstrates proficiency in C++ programming, file I/O, and JSON handling, suitable for task organization and portfolio showcasing.
+A sophisticated C++17 command-line application for collaborative task management, featuring task creation, viewing, assignment, and iCalendar export, with persistent storage in a SQLite database. Includes user roles (Admin/Member), task categories, due dates, priorities, and a cron-like scheduler for reminders. Designed for real-world productivity, integrating with calendar apps and mimicking enterprise tools like Trello. Showcases advanced C++ skills, database management, and system design.
+
+Features
+
+
+
+
+
+Manage tasks with descriptions, categories (Work, Personal, Study), due dates, priorities, and user assignments.
+
+
+
+Support multiple users with Admin/Member roles for collaborative workflows.
+
+
+
+Store data in a SQLite database for scalability.
+
+
+
+Export tasks to iCalendar (.ics) for integration with Google Calendar.
+
+
+
+Automated due task reminders via a cron-like scheduler.
+
+
+
+Robust error handling with file-based logging.
+
+
+
+Table-based CLI display for enhanced usability.
 
 Prerequisites
 
-Before setting up the project, ensure you have:
+
+
+
+
+C++ Compiler: g++ (GCC) with C++17 support.
 
 
 
 
 
-C++ Compiler: g++ (part of GCC) or any C++17-compatible compiler. Recommended:
+Mac: xcode-select --install or brew install gcc.
 
 
 
-
-
-Windows: Install MinGW from mingw-w64.org or use MSYS2.
-
-
-
-Mac: Install Xcode Command Line Tools (xcode-select --install) or Homebrew (brew install gcc).
+Linux: sudo apt install g++.
 
 
 
-Linux: Install GCC (sudo apt install g++ on Ubuntu/Debian).
+Windows: MinGW via MSYS2 (pacman -S mingw-w64-x86_64-gcc).
 
 
 
-CMake: For building the project (optional but recommended). Download from cmake.org or install via package manager (e.g., brew install cmake on Mac, sudo apt install cmake on Linux).
+CMake: brew install cmake (Mac), sudo apt install cmake (Linux), or download from cmake.org (Windows).
 
 
 
-Git: For version control. Download from git-scm.com if needed.
+SQLite: brew install sqlite (Mac), sudo apt install libsqlite3-dev (Linux), or download from sqlite.org (Windows).
 
 
 
-Text Editor: VS Code, CLion, or any editor for writing C++ code.
-
-
-
-Internet Connection: To download the nlohmann/json library.
+Git: git-scm.com.
 
 Setup Instructions
 
-Follow these steps to set up and run the Task Manager CLI. The process takes approximately 15–30 minutes.
-
-Step 1: Create the Project Repository
 
 
 
 
-
-Create a project folder:
+Create project folder:
 
 mkdir Task-Manager-CLI
 cd Task-Manager-CLI
 
 
 
-Initialize a Git repository (for GitHub):
+Initialize Git:
 
 git init
-
-Create a repository on github.com and link it:
-
-git remote add origin https://github.com/YOUR_USERNAME/Task-Manager-CLI.git
-
-Step 2: Install Dependencies
+git remote add origin https://github.com/kwesi-owusuofori/Task-Manager-CLI.git
 
 
 
-
-
-Verify C++ Compiler: Check if g++ is installed:
-
-g++ --version
-
-If not installed, follow the platform-specific instructions above.
-
-
-
-Download nlohmann/json:
-
-
-
-
-
-The project uses the nlohmann/json library for JSON handling.
-
-
-
-Download the single header file (json.hpp) from the latest release: github.com/nlohmann/json/releases.
-
-
-
-Place json.hpp in a folder named include in your project (e.g., Task-Manager-CLI/include/json.hpp).
-
-
-
-Alternatively, create the folder and download directly:
+Install dependencies:
 
 mkdir include
-curl -L https://github.com/nlohmann/json/releases/download/v3.11.3/json.hpp -o include/json.hpp
-
-Step 3: Add the Source Code
-
-
-
-
-
-Create a file named task_manager.cpp in the Task-Manager-CLI folder.
+curl -L https://www.sqlite.org/2023/sqlite-amalgamation-3410200.zip -o sqlite.zip
+unzip sqlite.zip
+mv sqlite-amalgamation-3410200/sqlite3.c include/
+mv sqlite-amalgamation-3410200/sqlite3.h include/
+rm -rf sqlite.zip sqlite-amalgamation-3410200
 
 
 
-Copy the following code into task_manager.cpp (provided below in the next section).
-
-
-
-Create a CMakeLists.txt file for easy compilation:
-
-cmake_minimum_required(VERSION 3.10)
-project(TaskManagerCLI)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-include_directories(include)
-add_executable(task_manager task_manager.cpp)
-
-This configures the project to use C++17 and include the json.hpp header.
-
-Step 4: Compile and Run the Program
+Add source files:
 
 
 
 
 
-Build the project using CMake:
+Save task_manager.cpp, CMakeLists.txt, and README.md.
+
+
+
+Ensure include/sqlite3.c and include/sqlite3.h are present.
+
+
+
+Build:
 
 mkdir build
 cd build
 cmake ..
 cmake --build .
 
-This generates an executable named task_manager (or task_manager.exe on Windows).
 
 
+Run:
 
-Run the program:
+./task_manager  # Mac/Linux
+task_manager.exe  # Windows
 
-./task_manager  # On Mac/Linux
-task_manager.exe  # On Windows
-
-
-
-Interact with the CLI:
-
-
-
-
-
-A menu will appear with options to add, view, update, delete, or mark tasks as complete.
-
-
-
-Tasks are saved to tasks.json in the project folder.
-
-Step 5: Upload to GitHub
-
-
-
-
-
-Add files to Git:
-
-git add task_manager.cpp CMakeLists.txt include/json.hpp tasks.json README.md
-git commit -m "Add Task Manager CLI in C++"
-
-
-
-Push to GitHub:
-
-git push origin main
-
-Troubleshooting
-
-If you encounter issues, try these solutions:
-
-
-
-
-
-Compiler Not Found:
-
-
-
-
-
-Ensure g++ is installed and accessible (g++ --version).
-
-
-
-On Windows, add MinGW’s bin folder to your PATH (e.g., C:\MinGW\bin).
-
-
-
-json.hpp Not Found:
-
-
-
-
-
-Verify json.hpp is in the include folder.
-
-
-
-Check that include_directories(include) is in CMakeLists.txt.
-
-
-
-CMake Errors:
-
-
-
-
-
-Install CMake if missing (brew install cmake on Mac, sudo apt install cmake on Linux).
-
-
-
-Run cmake .. from the build folder.
-
-
-
-No Tasks Saved:
-
-
-
-
-
-Ensure the program has write permissions in the project folder.
-
-
-
-Check if tasks.json is created after adding a task.
-
-
-
-Program Crashes:
-
-
-
-
-
-Verify your C++ compiler supports C++17.
-
-
-
-Share the error message for specific guidance.
-
-Enhancing Smooth Use
-
-
-
-
-
-Automate Builds: Use make (generated by CMake) to rebuild after code changes:
-
-cd build
-make
-
-
-
-Backup Tasks: Copy tasks.json before testing to avoid data loss.
-
-
-
-Extend Functionality: Add features like task categories or due dates (consult for code).
-
-
-
-Portfolio Ready: The project showcases C++ file I/O and JSON parsing, ideal for your CV.
-
-Sample Output
-
-After running the program, interact with the menu:
+Sample Usage
 
 Task Manager CLI
 1. Add Task
 2. View Tasks
-3. Update Task
-4. Delete Task
-5. Mark Task Complete
-6. Exit
+3. Add User
+4. Export to iCalendar
+5. Exit
+Enter choice: 3
+Enter user name: Alice
+Select role (1=Admin, 2=Member): 2
 Enter choice: 1
-Enter task description: Finish project
-Task added successfully!
+Enter description: Team meeting
+Select category (1=Work, 2=Personal, 3=Study, 4=Other): 1
+Enter due date (YYYY-MM-DD): 2025-06-05
+Enter priority (High/Medium/Low): High
+Assign to user ID: 2
 
-The tasks.json file will contain:
+Output (tasks.ics):
 
-[
-    {
-        "id": 1,
-        "description": "Finish project",
-        "completed": false
-    }
-]
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//TaskManagerCLI//EN
+BEGIN:VEVENT
+UID:1@taskmanagercli
+DTSTART:20250605T000000
+SUMMARY:Team meeting
+END:VEVENT
+END:VCALENDAR
+
+Troubleshooting
+
+
+
+
+
+SQLite Errors:
+
+
+
+
+
+Verify include/sqlite3.c and include/sqlite3.h.
+
+
+
+Install SQLite: brew install sqlite (Mac).
+
+
+
+Compilation Issues:
+
+
+
+
+
+Ensure C++17: g++ --version.
+
+
+
+Rebuild: rm -rf build && mkdir build && cd build && cmake .. && cmake --build ..
+
+
+
+No tasks.db:
+
+
+
+
+
+Run the program to create the database.
+
+
+
+Check permissions: chmod +w tasks.db.
 
 Notes
 
@@ -314,14 +211,12 @@ Notes
 
 
 
-Ethical Use: This is a local application with no external data scraping, ensuring compliance with ethical standards.
+Real-World Use: Ideal for team projects, personal productivity, or small businesses.
 
 
 
-Maintenance: The nlohmann/json library is stable, but check for updates periodically.
+Portfolio: Demonstrates C++17, SQLite, OOP, and system design.
 
 
 
-Portfolio: Add this project to your CV to highlight C++ skills.
-
-If you need help or encounter errors, share the error message or output, and I’ll provide a tailored fix immediately.
+Maintenance: Update SQLite periodically (sqlite.org).

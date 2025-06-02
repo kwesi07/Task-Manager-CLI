@@ -1,7 +1,9 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/cmake_install.cmake"
+		"/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/cmake_install.cmake",
+		"/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/external/SQLiteCpp/cmake_install.cmake",
+		"/Users/kwesiowusu-ofori/Documents/GITHUB_PROJECTS/Task-Manager-CLI/build/external/SQLiteCpp/sqlite3/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

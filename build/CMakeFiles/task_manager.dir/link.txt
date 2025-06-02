@@ -1,1 +1,1 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/task_manager.dir/task_manager.cpp.o -o task_manager
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/task_manager.dir/task_manager.cpp.o -o task_manager  external/SQLiteCpp/libSQLiteCpp.a -lpthread -ldl external/SQLiteCpp/sqlite3/libsqlite3.a
