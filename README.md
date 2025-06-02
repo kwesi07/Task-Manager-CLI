@@ -219,4 +219,6 @@ Portfolio: Demonstrates C++17, SQLite, OOP, and system design.
 
 
 
-Maintenance: Update SQLite periodically (sqlite.org).
+Portfolio: Add this project to your CV to highlight C++ skills.
+
+If you need help or encounter errors, share the error message or output, and I’ll provide a tailored fix immediately.
